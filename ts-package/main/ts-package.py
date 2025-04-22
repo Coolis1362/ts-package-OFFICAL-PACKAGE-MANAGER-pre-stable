@@ -23,7 +23,9 @@ def check_for_git():
 
 def ts_package():
     VERSION = "1.0.1"
+    GITHUBURL = "https://github.com/Coolis1362/ts-package-OFFICAL-PACKAGE-MANAGER"
     print(f"ts-package PACKAGE MANAGER VERSION: {VERSION}")
+    print("Type In 'help' For Commands")
 
     while True:
         user_input = input(">> ts-package ")
@@ -51,11 +53,61 @@ def ts_package():
                     if check_for_git():
                         os.system("git init")
                     else:
-                        print("git can't be found exiting")
+                        print("git can't be found existing")
                         time.sleep(1)
                         sys.exit(0)
                 except Exception as e:
                     print(f"Error occurred: {e}")
+        if user_input == "upgrade -pre-stable":
+            print("Rechecking For git...")
+            try:
+                if check_for_git():
+                    os.system(f"git clone {GITHUBURL}-pre-stable")
+                else:
+                    print("git can't be found existing")
+                    time.sleep(1)
+                    sys.exit(0)
+            except Exception as e:
+                print(f"Error occurred: {e}")
+        if user_input == "upgrade -stable":
+            try:
+                if check_for_git():
+                    os.system(f"git clone {GITHUBURL}")
+                else:
+                    print("git can't be found existing")
+                    time.sleep(1)
+                    sys.exit(0)
+            except Exception as e:
+                print(f"Error occurred: {e}")
+        if user_input == "upgrade -dev":
+            try:
+                if check_for_git():
+                    os.system(f"git clone {GITHUBURL}-dev")
+                else:
+                    print("git can't be found existing")
+                    time.sleep(1)
+                    sys.exit(0)
+            except Exception as e:
+                print(f"Error occurred: {e}")
+        if user_input == "upgrade -beta":
+            try:
+                if check_for_git():
+                    os.system(f"git clone {GITHUBURL}-beta")
+                else:
+                    print("git can't be found existing")
+                    time.sleep(1)
+                    sys.exit(0)
+            except Exception as e:
+                print(f"Error occurred: {e}")
+        if user_input == "help":
+            print("install Coolis1362/")
+            print("git")
+            print("|-git init")
+            print("upgrade")
+            print("| upgrade -pre-stable")
+            print("| upgrade -stable")
+            print("| upgrade -dev")
+            print("| upgrade -beta") 
 
 
 
