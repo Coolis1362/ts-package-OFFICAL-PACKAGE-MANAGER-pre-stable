@@ -113,9 +113,14 @@ def ts_package():
         if user_input == "install -u":
             github_user_input = input("GITHUB USER>> ")
             install_input2 = input(f">> ts-package install -u {github_user_input}/")
+            print("Rechecking If git Is Installed")
             try:
                 if check_for_git():
                     os.system(f"https://github.com/{github_user_input/{install_input2}}")
+                else:
+                    print("git can't be found existing")
+                    time.sleep(1)
+                    sys.exit(0)
             except Exception as e:
                 print(f"Error occurred: {e}")
 
