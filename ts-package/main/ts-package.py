@@ -110,6 +110,14 @@ def ts_package():
             print("| upgrade -beta")
             print("install -u")
 
+        if user_input == "install -u":
+            github_user_input = input("GITHUB USER>> ")
+            install_input2 = input(f">> ts-package install -u {github_user_input}/")
+            try:
+                if check_for_git():
+                    os.system(f"https://github.com/{github_user_input/{install_input2}}")
+            except Exception as e:
+                print(f"Error occurred: {e}")
 
 
 
