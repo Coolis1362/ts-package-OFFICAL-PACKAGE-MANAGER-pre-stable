@@ -107,7 +107,8 @@ def ts_package():
             print("| upgrade -pre-stable")
             print("| upgrade -stable")
             print("| upgrade -dev")
-            print("| upgrade -beta") 
+            print("| upgrade -beta")
+            print("install -u")
 
 
 
